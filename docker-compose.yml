@@ -1,0 +1,10 @@
+services:
+  api:
+    image: node:20-alpine
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    command: sh /app/docker/start.sh

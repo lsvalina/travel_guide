@@ -57,6 +57,7 @@ let
     tools = with pkgs; {
         cli = [
             coreutils
+            netcat-gnu
             nodejs_20
             overmind
             commitizen

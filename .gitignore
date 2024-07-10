@@ -1,0 +1,18 @@
+#IDEs and text editors
+.idea
+.vscode
+!.vscode/launch.json
+
+#OS junk
+.DS_Store
+xterm-256color.ti
+
+node_modules
+
+# dotenv environment variables file
+.env
+.env.*
+!.env.default
+
+# Nix directories
+.direnv

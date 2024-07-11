@@ -2,8 +2,8 @@ with builtins;
     { pkgs ? import
         (fetchTarball {
             name = "nixpkgs-unstable-2023-09-06";
-            url = "https://github.com/NixOS/nixpkgs/archive/f884153fb185d60e57d3c706f6eed274efff7d03.tar.gz";
-            sha256 = "sha256:033g5vak0dh2ckfxfw73kfqw55bifkiglb5p6azx1hgmivmy2apb";
+            url = "https://github.com/NixOS/nixpkgs/archive/6af55cb91ca2005516b9562f707bb99c8f79bf77.tar.gz";
+            sha256 = "sha256:1h65myd1bm32a429539dal9lmhnrb4mai8c4zn4s1jpkmy47x8ly";
         })
         {}
         , overlays ? [ ]
@@ -26,7 +26,7 @@ let
     '';
 
     api_run = with pkgs; writeScriptBin "__api_run" ''
-        npm start
+        npm run start:dev
     '';
 
 #   SETUP

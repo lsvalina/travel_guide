@@ -6,8 +6,30 @@ on:
             - master
 
 jobs:
+    tests:
+      if: "!startsWith(github.event.head_commit.message, 'bump:')"
+      runs-on: ubuntu-latest
+      steps:
+          - name: Check out
+            uses: actions/checkout@v4
+          - name: Set up Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: '20'
+          - name: Install dependencies
+            run: npm install
+          - name: Run unit tests
+            run: npm test
+          - name: Archive test results
+            if: always()
+            uses: actions/upload-artifact@v2
+            with:
+                name: test-results
+                path: reports/test-results.xml
+
     bump-version:
-        if: "!startsWith(github.event.head_commit.message, 'bump:')"
+        needs: tests
+        if: ${{ success() }}
         runs-on: ubuntu-latest
         name: 'Bump version and create changelog with commitizen'
         steps:

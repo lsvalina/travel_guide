@@ -18,7 +18,7 @@ describe('GET /findNearestRoutes', () => {
 
     it('should return nearest routes', async () => {
         nock(process.env.DATA_URL)
-            .get('')
+            .get(/.*/)
             .reply(200, mockedData)
 
         const res = await request(app)

@@ -18,7 +18,7 @@ describe('GET /api/routes/viewport', () => {
 
     it('should return points in viewport', async () => {
         nock(process.env.DATA_URL)
-            .get('')
+            .get(/.*/)
             .reply(200, mockedData)
 
         const res = await request(app)

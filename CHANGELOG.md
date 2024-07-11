@@ -2,5 +2,5 @@
 
 ### Feat
 
-- added findNearestRoutes and findPointsInViewport api
-- added findNearestRoutes and findPointsInViewport api
+-   added findNearestRoutes and findPointsInViewport api
+-   added findNearestRoutes and findPointsInViewport api

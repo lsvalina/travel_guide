@@ -5,5 +5,4 @@ if [ -z "$DATA_URL" ]; then
   exit 1
 fi
 
-pwd
 node /app/bin/www

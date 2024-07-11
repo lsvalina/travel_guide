@@ -1,33 +1,28 @@
 {
-  "env": {
-    "node": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:node/recommended",
-    "prettier",
-    "plugin:jsdoc/recommended-error"
-  ],
-  "settings": {
-    "json-schema-validator": {
-      "validate": false
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": ["eslint:recommended", "plugin:node/recommended", "prettier", "plugin:jsdoc/recommended-error"],
+    "settings": {
+        "json-schema-validator": {
+            "validate": false
+        }
+    },
+    "plugins": ["node", "jsdoc", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "no-unused-vars": [
+            "warn",
+            {
+                "varsIgnorePattern": "^_",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "prettier/prettier": "error",
+        "jsdoc/require-description": "warn"
     }
-  },
-  "plugins": ["node", "jsdoc", "prettier"],
-  "parserOptions": {
-    "ecmaVersion": 12
-  },
-  "rules": {
-    "indent": ["error", 4],
-    "no-unused-vars": [
-      "warn",
-      {
-        "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    "prettier/prettier": "error",
-    "jsdoc/require-description": "warn"
-  }
 }

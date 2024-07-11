@@ -17,7 +17,9 @@ describe('GET /findNearestRoutes', () => {
     })
 
     it('should return nearest routes', async () => {
-        nock(process.env.DATA_URL).get('').reply(200, mockedData)
+        nock(process.env.DATA_URL)
+            .get('')
+            .reply(200, mockedData)
 
         const res = await request(app)
             .get('/api/routes/findNearestRoutes')
@@ -31,7 +33,10 @@ describe('GET /findNearestRoutes', () => {
     })
 
     it('should return validation error for missing query params', async () => {
-        const res = await request(app).get('/api/routes/findNearestRoutes').query({ lat: 40.712776 })
+
+        const res = await request(app)
+            .get('/api/routes/findNearestRoutes')
+            .query({ lat: 40.712776 });
 
         expect(res.status).toBe(400)
         expect(res.body).toHaveProperty('errors')

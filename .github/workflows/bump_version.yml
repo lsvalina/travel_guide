@@ -22,12 +22,12 @@ jobs:
               run: npm install
             - name: Run unit tests
               run: npm test
-            - name: Archive test results
+            - name: Summary
               if: always()
-              uses: actions/upload-artifact@v2
+              uses: test-summary/action@v2
               with:
-                  name: test-results
-                  path: reports/test-results.xml
+                paths: |
+                  reports/test-results.xml
 
     bump-version:
         needs: tests
